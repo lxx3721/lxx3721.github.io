@@ -27,12 +27,12 @@
 <meta property="og:site_name" content="Ideale">
 <meta property="og:description" content="hot100 + labuladong速成路径  ACM模式代码模板 1234567891011import sysclass Solution:    def add(self, a: int, b: int) -&gt; int:        return a + b# 读取到 EOFfor line in sys.stdin:    a, b &#x3D; map(int, line.strip(">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://lxx3721.github.io/.io//Users/53513/OneDrive/%E5%9B%BE%E7%89%87/Screenshots/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260908200514_80_32.png">
+<meta property="og:image" content="https://lxx3721.github.io/2026/08/13/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260908200514_80_32.png">
 <meta property="article:published_time" content="2026-08-13T15:25:23.000Z">
-<meta property="article:modified_time" content="2026-09-08T13:29:42.432Z">
+<meta property="article:modified_time" content="2026-09-17T13:24:11.408Z">
 <meta property="article:author" content="lxx3721">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lxx3721.github.io/.io//Users/53513/OneDrive/%E5%9B%BE%E7%89%87/Screenshots/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260908200514_80_32.png">
+<meta name="twitter:image" content="https://lxx3721.github.io/2026/08/13/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260908200514_80_32.png">
 
 
 <link rel="canonical" href="https://lxx3721.github.io/2026/08/13/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">
@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-09-08 21:29:42" itemprop="dateModified" datetime="2026-09-08T21:29:42+08:00">2026-09-08</time>
+      <time title="Modified: 2026-09-17 21:24:11" itemprop="dateModified" datetime="2026-09-17T21:24:11+08:00">2026-09-17</time>
     </span>
 
   
@@ -268,8 +268,8 @@
 <blockquote>
 <p><mark>但是使用断点法更容易理解</mark></p>
 <p>把 1→2→3→4→5 变成 4→5→1→2→3，我们需要：</p>
-<p>首尾相连，把 5 和 1 连起来。遍历链表即可找到尾节点。<br>
-断开倒数第 k+1 个节点和倒数第 k 个节点，即断开 3→4。<br>
+<p>首尾相连，把 5 和 1 连起来。遍历链表即可找到尾节点。<br />
+断开倒数第 k+1 个节点和倒数第 k 个节点，即断开 3→4。<br />
 本题 k 可能很大，我们需要先求出链表的长度 n，然后把 k 更新为 kmodn。这是因为链表旋转 n 次没变，旋转 n+1 次等同于旋转 1 次，依此类推，旋转 k 次等价于旋转 kmodn 次。</p>
 <p>倒数第 k+1 个节点即正数第 n−k 个节点。从头节点开始，向后移动 n−k−1 次，即为正数第 n−k 个节点。</p>
 </blockquote>
@@ -357,14 +357,14 @@
 <li>判断是否有环：如果有环快慢指针一定会相遇</li>
 <li>寻找环起点：相遇后重置slow指向头结点，快慢指针同步走，相遇处就是环起点</li>
 </ol>
-<img src="/.io//Users/53513/OneDrive/图片/Screenshots/微信图片_20260908200514_80_32.png" style="zoom: 25%;">
+<style>.lwmoyqinntvy{zoom:25%;}</style><img src="/2026/08/13/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260908200514_80_32.png" class="lwmoyqinntvy">
 </blockquote>
 <h4 id="两链表是否相交"><a class="markdownIt-Anchor" href="#两链表是否相交"></a> 两链表是否相交</h4>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists/submissions/747796288/">160. 相交链表 - 力扣（LeetCode）</a><br>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists/submissions/747796288/">160. 相交链表 - 力扣（LeetCode）</a><br />
 <strong>关键</strong>：补齐长度差</p>
 <p>设置两个指针p1 p2分别指向两个链表，p1遍历完A链表之后去遍历B链表，p2遍历完B链表后遍历A链表，最后p1 p2会在交点相遇</p>
-<p>p1 的总路程 = A的全部 + B的独有部分<br>
+<p>p1 的总路程 = A的全部 + B的独有部分<br />
 p2 的总路程 = B的全部 + A的独有部分</p>
 <p>这两个路程相等！</p>
 </blockquote>
