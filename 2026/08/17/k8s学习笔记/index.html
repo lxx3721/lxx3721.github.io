@@ -18,28 +18,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lxx3721.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="k8s学习笔记  简介  解决容器很多时对容器进行管理 容器编排引擎 容器编排：通过配置文件定义应用程序的部署方式  特性  高可用性：容器长时间内持续正常运行，不会因为一个组件或服务故障导致整个系统不可用  自动重启、自动重建、自我修复  可扩展性：系统根据负载变化动态扩展和缩减资源，提高系统性能和资源利用率 …   组件  基础概念（资源对象） Node：节点，一个物理机或者虚拟机，k8s集">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k8s学习笔记">
-<meta property="og:url" content="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="https://lxx3721.github.io/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Ideale">
 <meta property="og:description" content="k8s学习笔记  简介  解决容器很多时对容器进行管理 容器编排引擎 容器编排：通过配置文件定义应用程序的部署方式  特性  高可用性：容器长时间内持续正常运行，不会因为一个组件或服务故障导致整个系统不可用  自动重启、自动重建、自我修复  可扩展性：系统根据负载变化动态扩展和缩减资源，提高系统性能和资源利用率 …   组件  基础概念（资源对象） Node：节点，一个物理机或者虚拟机，k8s集">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20260817215428751.png">
-<meta property="og:image" content="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20260817225810617.png">
+<meta property="og:image" content="https://lxx3721.github.io/.io//image-20260817215428751.png">
+<meta property="og:image" content="https://lxx3721.github.io/.io//image-20260817225810617.png">
 <meta property="article:published_time" content="2026-08-17T09:27:25.000Z">
 <meta property="article:modified_time" content="2026-08-17T15:08:27.612Z">
 <meta property="article:author" content="lxx3721">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20260817215428751.png">
+<meta name="twitter:image" content="https://lxx3721.github.io/.io//image-20260817215428751.png">
 
 
-<link rel="canonical" href="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://lxx3721.github.io/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2026/08/17/k8s学习笔记/","title":"k8s学习笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://lxx3721.github.io/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2026/08/17/k8s学习笔记/","title":"k8s学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>k8s学习笔记 | Ideale</title>
@@ -161,7 +161,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://lxx3721.github.io/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -256,7 +256,7 @@
 </blockquote>
 <h3 id="相关组件"><a class="markdownIt-Anchor" href="#相关组件"></a> 相关组件</h3>
 <p>ConfigMap</p>
-<p><img src="image-20260817215428751.png" alt="image-20260817215428751" /></p>
+<p><img src="/.io//image-20260817215428751.png" alt="image-20260817215428751"></p>
 <blockquote>
 <p>封装配置信息，在应用程序中读取使用</p>
 <p>配置信息和应用程序解耦，保持容器化应用程序可移植性</p>
@@ -292,7 +292,7 @@
 </blockquote>
 <h2 id="k8s架构"><a class="markdownIt-Anchor" href="#k8s架构"></a> k8s架构</h2>
 <p><strong>Master-Worker架构</strong></p>
-<p><img src="image-20260817225810617.png" alt="image-20260817225810617" /></p>
+<p><img src="/.io//image-20260817225810617.png" alt="image-20260817225810617"></p>
 <p>Master-Node：负责管理整个集群，有4个基本组件</p>
 <blockquote>
 <p>kube-apiserver：</p>
@@ -378,7 +378,7 @@
     </span>
     <span class="author" itemprop="copyrightHolder">lxx3721</span>
   </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
 
     </div>
