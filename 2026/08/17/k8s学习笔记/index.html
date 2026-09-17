@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>k8s学习笔记 | Ideale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="k8s学习笔记简介 解决容器很多时对容器进行管理 容器编排引擎 容器编排：通过配置文件定义应用程序的部署方式  特性  高可用性：容器长时间内持续正常运行，不会因为一个组件或服务故障导致整个系统不可用  自动重启、自动重建、自我修复  可扩展性：系统根据负载变化动态扩展和缩减资源，提高系统性能和资源利用率 …  组件基础概念（资源对象）Node：节点，一个物理机或者虚拟机，k8s集群操作的单元 P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="k8s学习笔记">
+<meta property="og:url" content="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Ideale">
+<meta property="og:description" content="k8s学习笔记简介 解决容器很多时对容器进行管理 容器编排引擎 容器编排：通过配置文件定义应用程序的部署方式  特性  高可用性：容器长时间内持续正常运行，不会因为一个组件或服务故障导致整个系统不可用  自动重启、自动重建、自我修复  可扩展性：系统根据负载变化动态扩展和缩减资源，提高系统性能和资源利用率 …  组件基础概念（资源对象）Node：节点，一个物理机或者虚拟机，k8s集群操作的单元 P">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/image-20260817215428751.png">
+<meta property="og:image" content="http://example.com/image-20260817225810617.png">
+<meta property="article:published_time" content="2026-08-17T09:27:25.000Z">
+<meta property="article:modified_time" content="2026-08-17T15:08:27.612Z">
+<meta property="article:author" content="lxx3721">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image-20260817215428751.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ideale" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ideale</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">什么都学一点</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-k8s学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2026-08-17T09:27:25.000Z" itemprop="datePublished">2026-08-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      k8s学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="k8s学习笔记"><a href="#k8s学习笔记" class="headerlink" title="k8s学习笔记"></a>k8s学习笔记</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>解决容器很多时对容器进行管理</p>
+<p>容器编排引擎</p>
+<p>容器编排：通过配置文件定义应用程序的部署方式</p>
+</blockquote>
+<p>特性</p>
+<blockquote>
+<p>高可用性：容器长时间内持续正常运行，不会因为一个组件或服务故障导致整个系统不可用</p>
+<blockquote>
+<p>自动重启、自动重建、自我修复</p>
+</blockquote>
+<p>可扩展性：系统根据负载变化动态扩展和缩减资源，提高系统性能和资源利用率</p>
+<p>…</p>
+</blockquote>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="基础概念（资源对象）"><a href="#基础概念（资源对象）" class="headerlink" title="基础概念（资源对象）"></a>基础概念（资源对象）</h3><p>Node：节点，一个物理机或者虚拟机，k8s集群操作的单元</p>
+<p>Pod：</p>
+<blockquote>
+<p>运行在节点上，<u>一个或者多个应用容器的组合</u>（一般情况下建议一个pod运行 一个容器）</p>
+<p>k8s的最小调度单元</p>
+<p>创建容器的运行环境，在环境中容器可以共享一些<u>资源</u>（网络、存储、运行时的配置等）</p>
+<p>pod之间通过ip地址来通信</p>
+</blockquote>
+<p>Service:</p>
+<blockquote>
+<p>解决pod故障后被k8s自动销毁有重建一个ip名不同的pod场景下的问题	<code>使用Service的ip地址来通信</code></p>
+<p>定义了pod的逻辑集合和访问该集合的策略，是真实服务的抽象</p>
+<p>提供了一个统一的服务访问入口以及服务代理和发现机制</p>
+<p>分类：</p>
+<blockquote>
+<p>内部服务：不暴露给外都的服务，在集群内部被访问比如数据库、缓存和消息队列等</p>
+<p>外部服务：暴露给外部的，例如后端api接口，前端页面	</p>
+<blockquote>
+<p>测试和开发环境中：<code>node:port 在节点开放一个端口，映射到Service的ip地址和端口</code> </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Ingress：</p>
+<blockquote>
+<p>管理从集群外部到内部访问集群的方式	<code>生产环境中从端口号访问服务时用</code></p>
+<p>配置：</p>
+<blockquote>
+<p>配置不同的转发规则来访问不同的Service</p>
+<p>配置域名来访问Service</p>
+<p>负载均衡</p>
+<p>SSL证书</p>
+</blockquote>
+</blockquote>
+<h3 id="相关组件"><a href="#相关组件" class="headerlink" title="相关组件"></a>相关组件</h3><p>ConfigMap</p>
+<p><img src="/image-20260817215428751.png" alt="image-20260817215428751"></p>
+<blockquote>
+<p>封装配置信息，在应用程序中读取使用</p>
+<p>配置信息和应用程序解耦，保持容器化应用程序可移植性</p>
+<p><strong>明文</strong>，不介意放敏感信息</p>
+<blockquote>
+<p><code>secret</code>组件：类似ConfigMap，但是可以封装敏感信息（做了一层Base64编码），需要搭配其他安全机制（网络安全、访问控制、身份认证等等）使用来保证数据安全</p>
+</blockquote>
+</blockquote>
+<p>Volumes：</p>
+<blockquote>
+<p>解决容器中数据无法持久化问题</p>
+<p>将需要持久化的资源挂载到集群中的本地磁盘上或者集群外部的远程存储上</p>
+</blockquote>
+<p>Deployment：</p>
+<blockquote>
+<p>防止<em>应用程序的单点故障问题</em>，保证高可用性	<code>在pod上增加一层抽象，将一个或多个pod组合在一起</code></p>
+<p>定义和管理应用程序的副本数量，以及应用程序的更新策略</p>
+<p>简化应用程序的部署和更新操作</p>
+<p>副本控制、滚动更新、自动扩缩容</p>
+</blockquote>
+<p>StatefulSet：</p>
+<blockquote>
+<p>防止*&#x3D;&#x3D;有状态&#x3D;&#x3D;的应用程序（eg. 数据库、缓存、消息队列）的单点故障问题* ，保证高可用性</p>
+<blockquote>
+<p>数据库每个副本都有自己的状态（数据），需要持久化存储和保持一致性</p>
+<p>保持会话状态</p>
+</blockquote>
+<p>类似Deployment，但是保证每个副本都有自己稳定的网络标识符和持久化存储</p>
+<p><u>缺点</u> ：部署繁琐，不是适用于所有的有状态的应用程序</p>
+<blockquote>
+<p>&#x3D;&#x3D;更方便、通用的方式：&#x3D;&#x3D;把有状态的应用程序放在集群外单独部署</p>
+</blockquote>
+</blockquote>
+<h2 id="k8s架构"><a href="#k8s架构" class="headerlink" title="k8s架构"></a>k8s架构</h2><p><strong>Master-Worker架构</strong></p>
+<p><img src="/image-20260817225810617.png" alt="image-20260817225810617"></p>
+<p>Master-Node：负责管理整个集群，有4个基本组件</p>
+<blockquote>
+<p>kube-apiserver：</p>
+<blockquote>
+<p>提供集群的api接口服务，所有组件通过该接口通信，类似集群的网关，所有集群经过它，由它分发到不同组件进行处理</p>
+<p>对所有资源对象的增删改查操作进行认证、授权和访问控制</p>
+</blockquote>
+<p>etcd：</p>
+<blockquote>
+<p>高可用的键-值存储系统，存储集群中所有资源对象的状态信息，数据存储中心</p>
+<p>一般只存储集群中各种资源对象的状态信息，不存储应用程序的信息（例如数据库的信息）</p>
+</blockquote>
+<p>controller-manager：</p>
+<blockquote>
+<p>管理集群中各种资源对象的状态，例如pod故障需要替换等</p>
+<p>&#x3D;&#x3D;云服务商提供的k8s集群额外提供&#x3D;&#x3D;：Cloud Controller Manager</p>
+<blockquote>
+<p>与云平台的api进行交互，并提供一致的管理接口</p>
+</blockquote>
+</blockquote>
+<p>schecduler： </p>
+<blockquote>
+<p>监控集群中所有节点的资源使用情况</p>
+<p>根据调度策略，将pod调度到合适的节点上运行</p>
+</blockquote>
+</blockquote>
+<p>Worker-Node：负责运行应用程序和服务，每个节点包含三个组件</p>
+<blockquote>
+<p>kubelet：管理和维护节点上的Pod，确保按照预期运行，定期从api-server接收新的或修改后的Pod规范，监控工作节点的运行情况并向api-server汇报</p>
+<blockquote>
+<p>api-server：封装核⼼对象的增删改查操作，以RESTful API接⼝⽅式提供给外部客户和内部组件调⽤</p>
+</blockquote>
+<p>kube-proxy：为pod对象提供网络代理和负载均衡服务</p>
+<blockquote>
+<p>用于节点之间通信（通过Service），在每个节点上启动一个网络代理</p>
+<p>作为负载均衡器，接收不同的请求，并发送到不同节点</p>
+</blockquote>
+<p>container-runtime：运行容器的软件，包括拉取容器镜像，创建容器、启动&#x2F;停止容器，所有应用程序都需要该组件运行</p>
+<blockquote>
+<p>常见的有Docker-Engine、Contained、CRI-O、Mirantis Container Runtime</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cuid3JpSgHUyCz7rgTXTDreGi" data-title="k8s学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/08/17/docker%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/17/k8s%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">k8s学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2026/08/17/docker%E7%AC%94%E8%AE%B0/">docker笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2026/08/13/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">刷题记录</a>
+          </li>
+        
+          <li>
+            <a href="/2026/08/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 lxx3721<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
